@@ -84,7 +84,7 @@ export default {
     } else {
       // eslint-disable-next-line no-alert, no-restricted-globals
       const leave = confirm(
-        'You have unsvaed changes. Are you sure you want to leave?'
+        'You have unsvaed changes. Are you sure you want to leave?',
       );
       console.log(leave);
       next(leave);
