@@ -14,9 +14,12 @@
     "@vee-validate/rules": "^4.5.3",
     "autoprefixer": "^9",
     "core-js": "^3.6.5",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "firebase": "8",
     "howler": "^2.2.3",
     "postcss": "^7",
+    "prettier": "^2.5.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vee-validate": "^4.5.5",
     "vue": "^3.0.0",
@@ -41,5 +44,14 @@
     "typescript": "~3.9.3",
     "vue-cli-plugin-tailwind": "^2.2.17",
     "vue-jest": "^5.0.0-0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "useTabs": false,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "bracketSpacing": true
   }
 }
