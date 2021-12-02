@@ -4,7 +4,7 @@
   <app-player />
   <auth-modal />
 </template>
-
+<!--Test-->
 <script>
 import AppHeader from './components/Header.vue';
 import AuthModal from './components/Auth.vue';
