@@ -18,18 +18,7 @@
       <vee-field
         type="text"
         name="name"
-        class="
-          block
-          w-full
-          py-1.5
-          px-3
-          text-gray-800
-          border border-gray-300
-          transition
-          duration-500
-          focus:outline-none focus:border-black
-          rounded
-        "
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Enter Name"
       />
       <ErrorMessage class="text-red-600" name="name" />
@@ -39,18 +28,7 @@
       <label class="inline-block mb-2">Email</label>
       <vee-field
         type="email"
-        class="
-          block
-          w-full
-          py-1.5
-          px-3
-          text-gray-800
-          border border-gray-300
-          transition
-          duration-500
-          focus:outline-none focus:border-black
-          rounded
-        "
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Enter Email"
         name="email"
       />
@@ -61,18 +39,7 @@
       <label class="inline-block mb-2">Age</label>
       <vee-field
         type="number"
-        class="
-          block
-          w-full
-          py-1.5
-          px-3
-          text-gray-800
-          border border-gray-300
-          transition
-          duration-500
-          focus:outline-none focus:border-black
-          rounded
-        "
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         name="age"
       />
       <ErrorMessage class="text-red-600" name="age" />
@@ -83,18 +50,7 @@
       <vee-field name="password" :bails="false" v-slot="{ field, errors }">
         <input
           type="password"
-          class="
-            block
-            w-full
-            py-1.5
-            px-3
-            text-gray-800
-            border border-gray-300
-            transition
-            duration-500
-            focus:outline-none focus:border-black
-            rounded
-          "
+          class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
           placeholder="Password"
           v-bind="field"
         />
@@ -108,18 +64,7 @@
       <label class="inline-block mb-2">Confirm Password</label>
       <vee-field
         type="password"
-        class="
-          block
-          w-full
-          py-1.5
-          px-3
-          text-gray-800
-          border border-gray-300
-          transition
-          duration-500
-          focus:outline-none focus:border-black
-          rounded
-        "
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Confirm Password"
         name="confirm_password"
       />
@@ -130,18 +75,7 @@
       <label class="inline-block mb-2">Country</label>
       <vee-field
         as="select"
-        class="
-          block
-          w-full
-          py-1.5
-          px-3
-          text-gray-800
-          border border-gray-300
-          transition
-          duration-500
-          focus:outline-none focus:border-black
-          rounded
-        "
+        class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         name="country"
       >
         <option value="USA">USA</option>
@@ -159,22 +93,14 @@
         name="tos"
         value="1"
       />
-      <label class="inline-block">Accept terms of service</label>
+      <i18n-t class="inline-block" keypath="register.accept" tag="label"
+        ><a href="#">{{ $t('register.TOS') }}</a></i18n-t
+      >
       <ErrorMessage class="text-red-600 block" name="tos" />
     </div>
     <button
       type="submit"
-      class="
-        block
-        w-full
-        bg-purple-600
-        text-white
-        py-1.5
-        px-3
-        rounded
-        transition
-        hover:bg-purple-700
-      "
+      class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition hover:bg-purple-700"
       :disabled="reg_in_submission"
     >
       Submit
