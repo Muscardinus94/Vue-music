@@ -36,29 +36,12 @@
           ></div>
         </div>
       </div>
-      <!-- <div class="mb-4">
-        <div class="font-bold text-sm">Just another song.mp3</div>
-        <div class="flex h-4 overflow-hidden bg-gray-200 rounded">
-          <div
-            class="transition-all progress-bar bg-blue-400"
-            style="width: 35%"
-          ></div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <div class="font-bold text-sm">Just another song.mp3</div>
-        <div class="flex h-4 overflow-hidden bg-gray-200 rounded">
-          <div
-            class="transition-all progress-bar bg-blue-400"
-            style="width: 55%"
-          ></div>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
+/* eslint-disable operator-linebreak */
 import { storage, auth, songsCollection } from '@/includes/firebase';
 
 export default {
@@ -82,23 +65,37 @@ export default {
         if (file.type !== 'audio/mpeg') {
           return;
         }
+        if (!navigator.onLine) {
+          this.uploads.push({
+            task: {},
+            current_progress: 100,
+            name: file.name,
+            variant: 'bg-red-400',
+            icon: 'fas fa-times',
+            text_class: 'text-red-400',
+          });
+          return;
+        }
+
         const storageRef = storage.ref();
         const songsRef = storageRef.child(`songs/${file.name}`);
         const task = songsRef.put(file);
 
-        const uploadIndex = this.uploads.push({
-          task,
-          current_progress: 0,
-          name: file.name,
-          variant: 'bg-blue-400',
-          icon: 'fas fa-spinner fa-spin',
-          text_class: '',
-        }) - 1;
+        const uploadIndex =
+          this.uploads.push({
+            task,
+            current_progress: 0,
+            name: file.name,
+            variant: 'bg-blue-400',
+            icon: 'fas fa-spinner fa-spin',
+            text_class: '',
+          }) - 1;
 
         task.on(
           'state_changed',
           (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             this.uploads[uploadIndex].current_progress = progress;
           },
           (error) => {
